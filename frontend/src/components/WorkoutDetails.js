@@ -12,11 +12,12 @@ const WorkoutDetails = ({workout})=>{
         if(!user){
             return
         }
-        const response = await fetch('/api/workouts/'+workout._id,{
+        const response = await fetch('https://gym-workout-server.onrender.com/api/workouts/'+workout._id,{
             method: 'DELETE',
             headers: {
                 'Authorization':`Bearer ${user.token}`
-            }
+            },
+            mode: 'cors'
         })
         const json=await response.json()
 

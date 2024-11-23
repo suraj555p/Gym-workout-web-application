@@ -12,10 +12,11 @@ const Home = () => {
 
     useEffect(() => {
         const fetchWorkouts = async () => {
-            const response = await fetch('/api/workouts',{
+            const response = await fetch('https://gym-workout-server.onrender.com/api/workouts',{
                 headers: {
                     'Authorization':`Bearer ${user.token}`
-                }
+                },
+                mode: 'cors'
             });
             const json = await response.json();
 
